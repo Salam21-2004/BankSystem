@@ -1,20 +1,51 @@
-// BankSystem.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
+#include <string>
+class validation {
+protected:
+    string name;
+    string password;
+    double balance;
+public:
+    static bool set_name(string name) {
+        if (name.length() < 3 || name.length() > 20) {
+            cout << "invalid name length \n";
+            return false;
+        }
+        for (auto n : name) {
+            if (!isalpha(n)) {
+                cout << "name must contian letters";
+                return false;
+            }
+        }
+        return true;
+    }
+    static bool set_password(string password) {
+        if (password.size() < 8 || password.size() > 20) {
+            cout << "invalid password size \n";
+            return false;
+        }
+        for (auto p : password) {
+            if (isspace(p)) {
+                cout << "password mustnot contain space";
+                return false;
+            }
+        }
+        return true;
+    }
+    static bool set_balance(double balance) {
+        if (balance < 1500) {
+            cout << "balance must be greater 1500";
+            return false;
+        }
+        return true;
+    }
+    static bool set_salary(double salary) {
+        if (salary < 5000) {
+            cout << "salary must be greater 5000";
+            return false;
+        }
+        return true;
+    }
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+};
