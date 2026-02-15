@@ -1,7 +1,54 @@
+#include<iostream>
+#include<string>
+using namespace std;
 
-#include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+class Person {
+	//attribut:
+protected:
+	int id;
+	string name;
+	string password;
+public:
+	//constructor:
+
+	Person() {
+		this->id = 0;
+
+	}
+	Person(int id, string name, string password) {
+		this->id = id;
+		this->name = name;
+		this->password = password;
+
+
+	}
+	//setter
+	void setId(int id) {
+		this->id = id;
+	}
+	void setName(string name) {
+		this->name = name;
+	}
+	void setId(string password) {
+		this->password = password;
+	}
+	//getter
+	int getId() {
+		return this->id;
+
+	}
+	string getName() {
+		return this->name;
+	}
+	string getPassword() {
+
+		return this->password;
+	}
+	//method
+	void display() {
+		cout << "name=" << name << endl;
+		cout << "id=" << id << endl;
+	}
+
+};
