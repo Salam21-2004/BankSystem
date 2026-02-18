@@ -1,20 +1,54 @@
-// BankSystem.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include<iostream>
+#include<string>
+using namespace std;
 
-#include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+class Person {
+	//attribut:
+protected:
+	int id;
+	string name;
+	string password;
+public:
+	//constructor:
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+	Person() {
+		this->id = 0;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	}
+	Person(int id, string name, string password) {
+		this->id = id;
+		this->name = name;
+		this->password = password;
+
+
+	}
+	//setter
+	void setId(int id) {
+		this->id = id;
+	}
+	void setName(string name) {
+		this->name = name;
+	}
+	void setId(string password) {
+		this->password = password;
+	}
+	//getter
+	int getId() {
+		return this->id;
+
+	}
+	string getName() {
+		return this->name;
+	}
+	string getPassword() {
+
+		return this->password;
+	}
+	//method
+	void display() {
+		cout << "name=" << name << endl;
+		cout << "id=" << id << endl;
+	}
+
+};
