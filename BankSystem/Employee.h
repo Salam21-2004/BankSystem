@@ -9,7 +9,7 @@ protected:
         string name;
         string password;
         double salary;
-    public:
+    public:5
         Employee() {
             id = 0;
             name = "";
