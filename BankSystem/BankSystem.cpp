@@ -28,10 +28,14 @@ public:
 		this->id = id;
 	}
 	void setName(string name) {
-		this->name = name;
+		if (Validation::validateName(name)) {
+			this->name = name;
+		}
 	}
 	void setId(string password) {
-		this->password = password;
+		if (Validation::validatePassword(password)) {
+			this->password = password;
+		}
 	}
 	//getter
 	int getId() {
@@ -46,7 +50,7 @@ public:
 		return this->password;
 	}
 	//method
-	void display() {
+	virtual void display() {
 		cout << "name=" << name << endl;
 		cout << "id=" << id << endl;
 	}
